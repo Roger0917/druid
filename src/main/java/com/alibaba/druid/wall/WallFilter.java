@@ -142,6 +142,12 @@ public class WallFilter extends FilterAdapter implements WallFilterMBean {
             }
 
             provider = new OracleWallProvider(config);
+        } else if (JdbcUtils.isXuguDbType(dbType)) {
+            if (config == null) {
+                config = new WallConfig(OracleWallProvider.DEFAULT_CONFIG_DIR);
+            }
+
+            provider = new OracleWallProvider(config);
         } else if (JdbcUtils.isSqlserverDbType(dbType)) {
             if (config == null) {
                 config = new WallConfig(SQLServerWallProvider.DEFAULT_CONFIG_DIR);

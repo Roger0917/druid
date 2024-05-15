@@ -896,6 +896,11 @@ public final class JdbcUtils implements JdbcConstants {
                 JdbcUtils.ALI_ORACLE.equals(dbType);
     }
 
+    public static boolean isXuguDbType(String dbType) {
+        return JdbcUtils.XUGU.equals(dbType) || //
+                JdbcUtils.CAE.equals(dbType);
+    }
+
     public static boolean isMysqlDbType(String dbType) {
         return JdbcUtils.MYSQL.equals(dbType) || //
                 JdbcUtils.OCEANBASE.equals(dbType) || //
